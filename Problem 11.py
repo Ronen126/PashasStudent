@@ -9,7 +9,7 @@ def BuildGrid():
     temp = []
     for a in xrange(20):
         for i in xrange(0,60,3):
-            temp.append(check[1+i:3+i])
+            temp.append(int(check[1+i:3+i]))
         MatrixCheck.append(temp)
         temp = []
         check = check[60:len(check)]
@@ -21,7 +21,7 @@ def ProductDiagonalRight():
     for r in xrange(17):
         for c in xrange(17):
             for i in xrange(4):
-                currentdiagonalproduct *= int(MatrixCheck[i+r][i+c])
+                currentdiagonalproduct *= MatrixCheck[i+r][i+c]
             if finaldiagonalproduct < currentdiagonalproduct:
                 finaldiagonalproduct = currentdiagonalproduct
             currentdiagonalproduct = 1
@@ -33,7 +33,7 @@ def ProductDiagonalLeft():
     for r in xrange(17):
         for c in xrange(19,2,-1):
             for i in xrange(4):
-                currentdiagonalproduct *= int(MatrixCheck[i+r][c-i])        
+                currentdiagonalproduct *= MatrixCheck[i+r][c-i]      
             if finaldiagonalproduct < currentdiagonalproduct:
                 finaldiagonalproduct = currentdiagonalproduct
             currentdiagonalproduct = 1
@@ -45,7 +45,7 @@ def ProductUpDown():
     for c in xrange(20):
         for r in xrange(17):
             for i in xrange(4):
-                currentdiagonalproduct *= int(MatrixCheck[i+r][c])    
+                currentdiagonalproduct *= MatrixCheck[i+r][c]   
             if finaldiagonalproduct < currentdiagonalproduct:
                 finaldiagonalproduct = currentdiagonalproduct
             currentdiagonalproduct = 1
@@ -57,7 +57,7 @@ def ProductLeftRight():
     for r in xrange(20):
         for c in xrange(17):
             for i in xrange(4):
-                currentdiagonalproduct *= int(MatrixCheck[r][i+c])   
+                currentdiagonalproduct *= MatrixCheck[r][i+c]  
             if finaldiagonalproduct < currentdiagonalproduct:
                 finaldiagonalproduct = currentdiagonalproduct
             currentdiagonalproduct = 1
